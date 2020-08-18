@@ -7,6 +7,8 @@ const forecast=require('./utils/forecast')
 
 const app=express()
 
+let port=process.env.PORT || 3000
+
 const publicDirectory=path.join(__dirname,'../public')
 const partialspath=path.join(__dirname,'/partials')
 
@@ -82,6 +84,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('server is up port '+port)
 })
