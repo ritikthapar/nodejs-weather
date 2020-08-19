@@ -9,16 +9,16 @@ const app=express()
 
 let port=process.env.PORT || 3000
 
-const publicDirectory=path.join(__dirname,'../public')
-const partialspath=path.join(__dirname,'/partials')
+//const publicDirectory=path.join(__dirname,'../public')
+//const partialspath=path.join(__dirname,'/partials')
 
 //setup handlebar engine
 app.set('view engine','hbs')
-hbs.registerPartials(partialspath)
+hbs.registerPartials('./partials')
 
 
 //setup static directory to serve
-app.use(express.static(publicDirectory))
+app.use(express.static('./public'))
 
 
 app.get('/',(req,res)=>{
