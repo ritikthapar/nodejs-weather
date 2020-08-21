@@ -3,13 +3,12 @@ const search =document.querySelector('input')
 const msg1=document.querySelector('#p1')
 const msg2=document.querySelector('#p2')
 
-
 weatherform.addEventListener('submit',(e)=>{
     e.preventDefault()
     const location=search.value
     msg1.textContent='Loading.....'
     msg2.textContent=''
-    fetch("http://localhost:3000/weather?address="+location).then((res)=>{
+    fetch('http://localhost:3000/weather?address='+location).then((res)=>{
         
         res.json().then((data)=>{
              if(data.error){
